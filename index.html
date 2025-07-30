@@ -43,11 +43,16 @@
 
         button.addEventListener("click", () => {
           sticker.setAttribute("visible", true);
-          sticker.setAttribute("animation",
-            "property: position; to: 0 2.2 -2; dur: 1000; easing: easeOutExpo");
+          sticker.setAttribute("position", "0 1.6 -2");
+          sticker.removeAttribute("animation");
+
+          setTimeout(() => {
+            sticker.setAttribute("animation",
+              "property: position; to: 0 2.2 -2; dur: 1000; easing: easeOutExpo");
+          }, 50);
+
           setTimeout(() => {
             sticker.setAttribute("visible", false);
-            sticker.setAttribute("position", "0 1.6 -2");
           }, 3000);
         });
       });
