@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,19 +10,26 @@
     <a-scene>
       <a-sky color="#ECECEC"></a-sky>
 
-      <!-- 红色按钮和贴纸 -->
       <a-entity position="0 1.6 -3">
-        <a-box id="stickerBtn" position="1 0.5 0.01" width="0.4" height="0.3" depth="0.05" color="#FF0000">
-          <a-text value="Sticker" position="0 0 0.05" align="center" color="#FFF" width="1"></a-text>
+        <a-box id="stickerBtn"
+               position="1 0.5 0.01"
+               width="0.4"
+               height="0.3"
+               depth="0.05"
+               color="#FF0000">
+          <a-text value="Sticker"
+                  position="0 0 0.05"
+                  align="center"
+                  color="#FFF"
+                  width="1"></a-text>
         </a-box>
 
-        <a-image
-          id="sticker"
-          src="https://cdn-icons-png.flaticon.com/512/742/742751.png"
-          width="0.4"
-          height="0.4"
-          position="0 1.6 -2"
-          visible="false">
+        <a-image id="sticker"
+                 src="https://cdn-icons-png.flaticon.com/512/742/742751.png"
+                 width="0.4"
+                 height="0.4"
+                 position="0 1.6 -2"
+                 visible="false">
         </a-image>
       </a-entity>
 
@@ -35,12 +43,8 @@
 
         button.addEventListener("click", () => {
           sticker.setAttribute("visible", true);
-          sticker.setAttribute("animation", {
-            property: "position",
-            to: "0 2.2 -2",
-            dur: 1000,
-            easing: "easeOutExpo"
-          });
+          sticker.setAttribute("animation",
+            "property: position; to: 0 2.2 -2; dur: 1000; easing: easeOutExpo");
           setTimeout(() => {
             sticker.setAttribute("visible", false);
             sticker.setAttribute("position", "0 1.6 -2");
